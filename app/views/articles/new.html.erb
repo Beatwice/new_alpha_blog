@@ -1,0 +1,24 @@
+<h1>ARTICLE - NEW</h1>
+
+<% if @article.errors.any? %>
+  <h2>The following errors prevented the article from being saved</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, class: "form-label" %><br/>
+    <%= f.text_field :title, class: "form-control"  %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :description, class: "form-label" %><br/>
+    <%= f.text_area :description, class: "form-control" %>
+ </div>
+  <p>
+    <%= f.submit class: 'btn btn-primary' %>
+  </p>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>ARTICLE - INDEX</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tittle</th>
+            <th >Description</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td><%= link_to 'Show', article_path(article), class: "btn btn-primary" %></td>
+                <td><%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-danger" %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
