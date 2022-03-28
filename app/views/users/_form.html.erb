@@ -11,12 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
+  <div class="mb-3">
+    <%= form.label :username, class: "form-label" %><br/>
+    <%= form.text_field :username, class: "form-control"  %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :email, class: "form-label" %><br/>
+    <%= form.email_field :email, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+      <%= form.label :password, class: "form-label" %><br/>
+      <%= form.password_field :password, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit (@user.new_record? ? "Sign Up" : "Update account") %>
   </div>
 <% end %>
+
