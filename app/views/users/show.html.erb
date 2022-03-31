@@ -1,8 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @user %>
-
-
 <table class="table">
   <thead>
       <tr>
@@ -25,7 +23,7 @@
       <% end %>
   </tbody>
 </table>
-
+<%= will_paginate @articles %>
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>

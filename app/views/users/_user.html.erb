@@ -2,8 +2,6 @@
   <p>
     <strong>Username:</strong>
     <%= user.username %>
+    <%= link_to gravatar_for(user), user %>
   </p>
-
-  <%= gravatar_for @user%>
-
 </div>
